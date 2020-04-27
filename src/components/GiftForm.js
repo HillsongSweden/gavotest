@@ -4,13 +4,13 @@ import ProgressBar from './ProgressBar'
 export default function ({ setTopGifts, questions, setQuestionById }) {
   const completedCount = questions.filter(q => q.value !== undefined).length
 
-  const [error, setError] = useState()
+  const [error, setError] = useState(false)
 
   function handleForm (e) {
     e.preventDefault()
 
     if (completedCount !== questions.length) {
-      setError('Please answer all statements first')
+      setError(true)
       return
     }
       
@@ -48,7 +48,10 @@ export default function ({ setTopGifts, questions, setQuestionById }) {
             {
               Array(4).fill().map((_, i) => (
                 <label htmlFor={questionId + i} className={`radiobutton ${question.value === i ? ' active' : ''}`} key={i}>
-                  <input id={questionId + i} type="radio" value={i} checked={question.value === i} onChange={e => setQuestionById(index, e.target.value)} />
+                  <input id={questionId + i} type="radio" value={i} checked={question.value === i} onChange={e => {
+                    setError(false)
+                    setQuestionById(index, e.target.value)
+                  }} />
                 </label>
               ))
             }
@@ -56,7 +59,7 @@ export default function ({ setTopGifts, questions, setQuestionById }) {
         )
       })
       }
-      {error && <p className="error-text">{error}</p>}
+      <p className={`error-text ${error && 'active'}`}>Please answer all statements first</p>
       <button type="submit" className="btn">Show me my top gifts!</button>
     </form>
   )
