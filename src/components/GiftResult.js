@@ -1,7 +1,10 @@
 import axios from 'axios'
 import React, { useState } from 'react'
+import Dropdown from './Dropdown'
 
 import descriptions from '../data/descriptions'
+
+console.log(descriptions)
 
 const CAMPUSES = [
   'Stockholm City',
@@ -24,7 +27,7 @@ export default function ({ topGifts }) {
       .join('')
 
     const response = await axios
-      .post('/.netlify/functions/mail', { body, email })
+      .post('/.netlify/functions/mail', { body, email, campus })
       .catch(console.error)
 
     console.log(response.data)
@@ -32,13 +35,21 @@ export default function ({ topGifts }) {
 
   return (
     <div>
+      <h1>These are your top three spiritual gifts</h1>
       {topGifts.map((g, i) => {
         return (
           <div key={i} dangerouslySetInnerHTML={{ __html: descriptions[g] }}></div>
         )
       })}
-      <input type="email" value={email} onChange={e => setEmail(e.target.value)} />
-      <button onClick={sendResult}>Skicka resultatet till dig själv</button>
+      <div>
+        <input type="email" value={email} onChange={e => setEmail(e.target.value)} />
+      </div>
+      <div className="form-group">
+        <label>Välj ditt campus</label>
+        <br />
+        <Dropdown options={CAMPUSES} onSelect={setCampus} />
+      </div>
+      <button className="btn" onClick={sendResult}>Skicka resultatet till dig själv</button>
     </div>
   )
 }

@@ -11,6 +11,16 @@
   color: white;
 }
 
+.App input[type="email"], input[type="text"] {
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid white;
+  width: 300px;
+  color: #fff;
+  font-size: 1em;
+  margin: 1em 0;
+}
+
 .btn {
   background: #fff;
   color: #8a8481;
@@ -104,4 +114,79 @@
 
 .error-text.active {
   opacity: 1;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  color: #666;
+  margin-bottom: 1em;
+}
+
+.dropdown > div {
+  cursor: pointer;
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+  border-radius: 4px;
+  display: inline-block;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.dropdown.open > div {
+  box-shadow: 0 0 4px #93c7ff;
+}
+
+.dropdown > div span {
+  float: right;
+  margin-left: 10px;
+  display: inline-block;
+  color: #666;
+  font-size: 0.8em;
+}
+
+.dropdown > div span.chevron {
+  transform: rotate(0deg);
+  transition: 200ms transform;
+}
+
+.dropdown.open > div span.chevron {
+  transform: rotate(180deg);
+}
+
+.dropdown  ul {
+  position: absolute;
+  top: 1em;
+  left: 0;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transform: rotateX(90deg);
+  transform-origin: top center;
+  transition: 200ms transform ease-out;
+  perspective: 800px;
+  list-style: none;
+  padding: 0;
+  border: 1px solid #ddd;
+  display: inline-block;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.open ul {
+  transform: rotateX(0deg);
+}
+
+ul li {
+  padding: 15px 10px;
+  cursor: pointer;
+}
+
+ul li.active {
+  background: #eee;
+}
+
+ul li .checkmark {
+  color: #93c7ff;
+  float: right;
 }
