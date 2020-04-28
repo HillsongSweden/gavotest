@@ -5,7 +5,7 @@ export default function ({ completed, total }) {
 
   return (
     <>
-      <h3 className ="progress-text">{completed}/{total}</h3>
+      <h3 className={`progress-text ${completed > 0 ? 'active' : ''}`}>{completed}/{total}</h3>
       <div style={{ width: percentage + '%' }} className="progress-bar"></div>
     </>
   )
