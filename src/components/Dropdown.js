@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react'
 
-export default function ({ options = [], onSelect }) {
+export default function ({ options = [], onSelect, placeholderText }) {
   const selectRef = useRef(null)
   const [isOpen, setIsOpen] = useState(false)
   const [selected, setSelected] = useState()
@@ -75,7 +75,7 @@ export default function ({ options = [], onSelect }) {
       }}>
         {selected !== undefined
           ? <>{options[selected]} <span onClick={unSelect}>✘</span></>
-          : <>Select an option <span className="chevron">▼</span></>
+          : <>{placeholderText} <span className="chevron">▼</span></>
         }
       </div>
       <br />
