@@ -17,7 +17,7 @@ const mailgunPromise = (data) => {
 }
 
 exports.handler = async (event, context, callback) => {
-  const {body, email} = JSON.parse(event.body)
+  const { body, email, campus } = JSON.parse(event.body)
   const data = {
     from: 'Online Evening College <system@hillsong.se>',
     to: email,
@@ -28,7 +28,7 @@ exports.handler = async (event, context, callback) => {
         padding: 10px;
         margin: 0 auto;">
         <h1>Tack att du gjorde gåvotestet</h1>
-        <p>Vi hoppas att du lärde dig något nytt om dig själv. Här ditt resultat:</p>
+        <p>Vi hoppas att du lärde dig något nytt om dig själv. Här dina topp tre andliga gåvor:</p>
         <hr>
         ${body}
       </div>
