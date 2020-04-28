@@ -40,7 +40,7 @@ Romans 12:8 Mark 9:41 Acts 16:33-34 Luke 10:33-35 Matthew 20:29-34 Matthew 25:34
 The gift of missionary is the special ability that God gives to certain members of the body of Christ to minister whatever other spiritual gifts they have in a second culture. 
 1 Corinthians 9:19-23 Acts 8:4 Acts 13:2-3 Acts 22:21 Romans 10:15 
 `,
-  evangelist: `<h4>Evangelist</h4>
+  evangelism: `<h4>Evangelist</h4>
 The gift of evangelist is the special ability that God gives to certain members of the body of Christ to share the gospel with unbelievers in such a way that men and women become Jesus’ disciples and responsible members of the body of Christ. 
 Ephesians 4:11-14 2 Timothy 4:5 Acts 8:5-6 & 26-40 Acts 14:21 Acts 21:8 
 `,
