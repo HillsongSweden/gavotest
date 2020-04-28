@@ -13,22 +13,17 @@ const CAMPUSES = [
   'Örebro'
 ]
 
-export default function ({ topGifts }) {
+export default function ({ topGifts, resetForm }) {
   const [email, setEmail] = useState('')
   const [campus, setCampus] = useState('Stockholm City')
+  const [emailSent, setEmailSent] = useState(false)
 
   async function sendResult () {
     if (!email.trim()) return
 
-    const body = topGifts
-      .map((gift) => `<div>${descriptions[gift]}</div>`)
-      .join('')
-
     const response = await axios
-      .post('/.netlify/functions/mail', { body, email, campus })
+      .post('/.netlify/functions/mail', { topGifts, email, campus })
       .catch(console.error)
-
-    console.log(response.data)
   }
 
   return (
@@ -39,19 +34,20 @@ export default function ({ topGifts }) {
           <div key={i} dangerouslySetInnerHTML={{ __html: descriptions[g] }}></div>
         )
       })}
-      <div>
-        <input
-          type="email"
-          value={email}
-          onChange={e => setEmail(e.target.value)}
-          placeholder="Your email address" />
+      <div className="email-result">
+        <h3>Send your results to yourself</h3>
+        <div className="form-group">
+          <Dropdown options={CAMPUSES} onSelect={setCampus} placeholderText="Select your campus" />
+        </div>
+        <div className="form-group">
+          <input
+            type="email"
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+            placeholder="Your email address" />
+        </div>
+        <button className="btn" onClick={sendResult}>Send the email</button>
       </div>
-      <div className="form-group">
-        <label>Välj ditt campus</label>
-        <br />
-        <Dropdown options={CAMPUSES} onSelect={setCampus} />
-      </div>
-      <button className="btn" onClick={sendResult}>Skicka resultatet till dig själv</button>
     </div>
   )
 }
