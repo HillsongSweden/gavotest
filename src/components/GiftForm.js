@@ -6,7 +6,7 @@ export default function ({ setTopGifts, questions, setQuestionById }) {
 
   const [error, setError] = useState(false)
 
-  function handleForm (e) {
+  async function handleForm (e) {
     e.preventDefault()
 
     if (completedCount !== questions.length) {
@@ -14,13 +14,15 @@ export default function ({ setTopGifts, questions, setQuestionById }) {
       return
     }
       
-    const giftScores = questions.reduce((acc, cur) => {
-      const { type, value } = cur
-      acc[type] = acc[type] !== undefined
-        ? (acc[type] + value)
-        : value
-      return acc
-    }, {})
+    const giftScores = questions
+      .filter(q => q.value)
+      .reduce((acc, cur) => {
+        const { type, value } = cur
+        acc[type] = acc[type] !== undefined
+          ? (acc[type] + value)
+          : value
+        return acc
+      }, {})
 
     const topThreeGifts = Object.entries(giftScores)
       .sort((a, b) => b[1] - a[1])

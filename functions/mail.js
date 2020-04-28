@@ -1,7 +1,8 @@
-const { MAILGUN_KEY, MAILGUN_DOMAIN } = process.env
+const { MAILGUN_KEY, MAILGUN_DOMAIN, MAILGUN_ENDPOINT } = process.env
 const mailgun = require('mailgun-js')({
   apiKey: MAILGUN_KEY,
-  domain: MAILGUN_DOMAIN
+  domain: MAILGUN_DOMAIN,
+  host: MAILGUN_ENDPOINT
 })
 
 const mailgunPromise = (data) => {
@@ -16,18 +17,32 @@ const mailgunPromise = (data) => {
 }
 
 exports.handler = async (event, context, callback) => {
+  const {body, email} = JSON.parse(event.body)
   const data = {
-    from: `Online Evening College <josef@${MAILGUN_DOMAIN}>`,
-    to: 'josef.lekardal@hillsong.se',
+    from: 'Online Evening College <system@hillsong.se>',
+    to: email,
     subject: 'Gåvotest',
-    text: 'Här är ditt resultat!'
+    html: `
+      <div
+        style="max-width: 800px;
+        padding: 10px;
+        margin: 0 auto;">
+        <h1>Tack att du gjorde gåvotestet</h1>
+        <p>Vi hoppas att du lärde dig något nytt om dig själv. Här ditt resultat:</p>
+        <hr>
+        ${body}
+      </div>
+    `
   }
    
   try {
     const body = await mailgunPromise(data)
     callback(null, {
       statusCode: 200,
-      body: JSON.stringify(body)
+      body: JSON.stringify(body),
+      headers: {
+        'Content-Type': 'text/html'
+      }
     })
   } catch (error) {
     console.log('There was an error sending the email')
