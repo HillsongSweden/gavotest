@@ -9,10 +9,10 @@ export default function ({ setTopGifts, questions, setQuestionById }) {
   async function handleForm (e) {
     e.preventDefault()
 
-    if (completedCount !== questions.length) {
-      setError(true)
-      return
-    }
+    // if (completedCount !== questions.length) {
+    //   setError(true)
+    //   return
+    // }
       
     const giftScores = questions
       .filter(q => q.value)

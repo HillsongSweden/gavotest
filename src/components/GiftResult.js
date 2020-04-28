@@ -4,8 +4,6 @@ import Dropdown from './Dropdown'
 
 import descriptions from '../data/descriptions'
 
-console.log(descriptions)
-
 const CAMPUSES = [
   'Stockholm City',
   'Stockholm Norra',
@@ -42,7 +40,11 @@ export default function ({ topGifts }) {
         )
       })}
       <div>
-        <input type="email" value={email} onChange={e => setEmail(e.target.value)} />
+        <input
+          type="email"
+          value={email}
+          onChange={e => setEmail(e.target.value)}
+          placeholder="Your email address" />
       </div>
       <div className="form-group">
         <label>Välj ditt campus</label>
