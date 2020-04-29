@@ -24,7 +24,7 @@ function App() {
     <div className="App">
       <main>
         {topGifts
-          ? <GiftResult topGifts={topGifts} />
+          ? <GiftResult topGifts={topGifts} resetForm={() => setTopGifts()} />
           : <GiftForm setTopGifts={setTopGifts} questions={questions} setQuestionById={setQuestionById} />
         }
       </main>

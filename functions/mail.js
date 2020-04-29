@@ -20,7 +20,7 @@ const mailgunPromise = (data) => {
 exports.handler = async (event, context, callback) => {
   const { topGifts, email, campus } = JSON.parse(event.body)
 
-  const mailBody = topGifts.map(gift => descriptions[gift]).join('')
+  const giftMarkup = topGifts.map(gift => descriptions[gift]).join('')
 
   const data = {
     from: 'Online Evening College <system@hillsong.se>',
@@ -30,9 +30,9 @@ exports.handler = async (event, context, callback) => {
       <div
         style="
           max-width: 800px;
-          padding: 10px;
+          padding: 2em;
           margin: 0 auto;
-          background: #333;
+          background: #191919;
           text-align: center;
           color: #fff;
           font-size: 1.3em;
@@ -41,7 +41,7 @@ exports.handler = async (event, context, callback) => {
         <h1>Tack att du gjorde gåvotestet</h1>
         <p>Vi hoppas att du lärde dig något nytt om dig själv. Här dina topp tre andliga gåvor:</p>
         <hr>
-        ${mailBody}
+        ${giftMarkup}
       </div>
     `
   }
