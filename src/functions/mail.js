@@ -6,6 +6,8 @@ const mailgun = require('mailgun-js')({
   host: MAILGUN_ENDPOINT
 })
 
+console.log({ MAILGUN_KEY, MAILGUN_DOMAIN, MAILGUN_ENDPOINT })
+
 const mailgunPromise = (data) => {
   return new Promise((res, rej) => {
     mailgun.messages().send(data, (error, body) => {
