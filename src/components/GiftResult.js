@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useState } from 'react'
 import Dropdown from './Dropdown'
 
-import descriptions from '../data/descriptions'
+import descriptions from '../functions/descriptions'
 
 const CAMPUSES = [
   'Stockholm City',

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import GiftForm from './GiftForm'
 import GiftResult from './GiftResult'
 import './App.css'
-import initialQuestions from '../data/questions'
+import initialQuestions from '../functions/questions'
 
 function App() {
   const [questions, setQuestions] = useState(initialQuestions)

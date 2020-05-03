@@ -1,5 +1,5 @@
 const { MAILGUN_KEY, MAILGUN_DOMAIN, MAILGUN_ENDPOINT } = process.env
-const descriptions = require('../src/data/descriptions')
+const descriptions = require('./descriptions')
 const mailgun = require('mailgun-js')({
   apiKey: MAILGUN_KEY,
   domain: MAILGUN_DOMAIN,
