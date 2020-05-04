@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   online_gift_test: {
     en_GB: 'Online spiritual gifts test',
     sv_SE: 'Online-test i andliga gåvor',

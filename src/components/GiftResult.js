@@ -23,15 +23,29 @@ export default function ({ topGifts, resetForm, language }) {
   async function sendResult () {
     if (!email.trim()) return
 
-    const response = await axios
-      .post('/.netlify/functions/mail', {
-        topGifts,
-        email,
-        campus,
-        shareWithCampusPastor,
-        language
-      })
-      .catch(console.error)
+    try {
+      const response = await axios
+        .post('/.netlify/functions/mail', {
+          topGifts,
+          email,
+          campus,
+          shareWithCampusPastor,
+          language
+        })
+      
+      setEmailSent(true)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  if (emailSent) {
+    return (
+      <div>
+        <h1>Thank you for taking the test!</h1>
+        <button type="button" onClick={resetForm}>Click here to start over</button>
+      </div>
+    )
   }
 
   return (
