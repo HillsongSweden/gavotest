@@ -20,7 +20,7 @@ const GOOGLE_AUTH = {
   auth_provider_x509_cert_url: 'https://www.googleapis.com/oauth2/v1/certs',
   project_id: GOOGLE_PROJECT_ID,
   private_key_id: GOOGLE_PRIVATE_KEY_ID,
-  private_key: GOOGLE_PRIVATE_KEY,
+  private_key: JSON.parse(GOOGLE_PRIVATE_KEY),
   client_email: GOOGLE_CLIENT_EMAIL,
   client_x509_cert_url: GOOGLE_CLIENT_X509_CERT_URL,
   client_id: GOOGLE_CLIENT_ID
