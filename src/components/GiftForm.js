@@ -1,14 +1,7 @@
 import React, { useState } from 'react'
 import ProgressBar from './ProgressBar'
 import useLocale from '../hooks/useLocale'
-
-function Checkbox ({ value, setValue, checked }) {
-  return (
-    <label className={`radiobutton${checked ? ' active' : ''}`}>
-      <input type="radio" value={value} checked={checked} onChange={e => setValue(e.target.value)} />
-    </label>
-  )
-}
+import Checkbox from './Checkbox'
 
 function classFactory (classes) {
   return Object.entries(classes).reduce((acc, cur) => {
@@ -72,6 +65,7 @@ export default function ({ setTopGifts, questions, setQuestionById }) {
         {questions.map((question, index) => {
           const questionId = question.type + '@' + index
 
+
           return (
             <fieldset
               key={questionId}
@@ -80,15 +74,15 @@ export default function ({ setTopGifts, questions, setQuestionById }) {
                 active: index === currentQuestion,
                 done: index < currentQuestion
               })}>
-              <label htmlFor={questionId}>
-                {question.question}
-              </label>
+              <label>{question.question}</label>
               {
                 Array(4).fill().map((_, i) => (
                   <Checkbox
                     key={i}
+                    id={[questionId, i].join('.')}
                     checked={question.value === i}
                     value={i}
+                    name={[questionId, i].join('.')}
                     setValue={setQuestionValueById(index)} />
                 ))
               }
