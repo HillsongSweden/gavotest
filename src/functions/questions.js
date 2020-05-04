@@ -53,10 +53,6 @@ export default {
         "type": "faith"
       },
       {
-        "question": "",
-        "type": ""
-      },
-      {
         "question": "I found it easy to determine whether things are from God or not",
         "type": "discerning_between_spirits"
       },
@@ -67,10 +63,6 @@ export default {
       {
         "question": "I enjoy explaining biblical truths to people.",
         "type": "teaching"
-      },
-      {
-        "question": "",
-        "type": ""
       },
       {
         "question": "I believe I know where I am going and others seem to follow.",
@@ -133,10 +125,6 @@ export default {
         "type": "faith"
       },
       {
-        "question": "",
-        "type": ""
-      },
-      {
         "question": "I am aware of the spiritual realm and know when Satan is at work in things",
         "type": "discerning_between_spirits"
       },
@@ -147,10 +135,6 @@ export default {
       {
         "question": "I think I have what it takes to teach a bible study or lead a small group discussion.",
         "type": "teaching"
-      },
-      {
-        "question": "",
-        "type": ""
       },
       {
         "question": "I would enjoy leading, inspiring and motivating others to become involved in God’s work.",
@@ -213,10 +197,6 @@ export default {
         "type": "faith"
       },
       {
-        "question": "",
-        "type": ""
-      },
-      {
         "question": "I believe I have the gift of discerning between spirits",
         "type": "discerning_between_spirits"
       },
@@ -227,10 +207,6 @@ export default {
       {
         "question": "I am willing to spend extra time studying biblical principles in order to communicate them clearly to others.",
         "type": "teaching"
-      },
-      {
-        "question": "",
-        "type": ""
       },
       {
         "question": "I have a desire to lead, inspire and cast vision to groups of people ",
@@ -293,10 +269,6 @@ export default {
         "type": "faith"
       },
       {
-        "question": "",
-        "type": ""
-      },
-      {
         "question": "Sometimes I can tell when someones motives are not pure",
         "type": "discerning_between_spirits"
       },
@@ -307,10 +279,6 @@ export default {
       {
         "question": "I believe I have the gift of teaching.",
         "type": "teaching"
-      },
-      {
-        "question": "",
-        "type": ""
       },
       {
         "question": "I like to lead people and to help them find Biblical answers that help their lives",
@@ -373,10 +341,6 @@ export default {
         "type": "faith"
       },
       {
-        "question": "",
-        "type": ""
-      },
-      {
         "question": "Sometimes I sense when teaching is not right and is deceptive",
         "type": "discerning_between_spirits"
       },
@@ -387,10 +351,6 @@ export default {
       {
         "question": "Others tell me I present the gospel in a way that is easy to understand.",
         "type": "teaching"
-      },
-      {
-        "question": "",
-        "type": ""
       },
       {
         "question": "I believe I have leadership skills.",
@@ -453,10 +413,6 @@ export default {
         "type": "faith"
       },
       {
-        "question": "",
-        "type": ""
-      },
-      {
         "question": "I believe I have the gift of discerning between spirits",
         "type": "discerning_between_spirits"
       },
@@ -467,10 +423,6 @@ export default {
       {
         "question": "Because of my teaching, I have brought others to a better understanding of the Christian faith.",
         "type": "teaching"
-      },
-      {
-        "question": "",
-        "type": ""
       },
       {
         "question": "When I’m in a group I’m usually the leader or I take the lead if no one else does.",
@@ -544,10 +496,6 @@ export default {
         "type": "faith"
       },
       {
-        "question": "",
-        "type": ""
-      },
-      {
         "question": "Lo encuentro muy fácil determinar si algo viene de Dios o no.",
         "type": "discerning_between_spirits"
       },
@@ -558,10 +506,6 @@ export default {
       {
         "question": "Disfruto explicar verdades biblicas a las personas.",
         "type": "teaching"
-      },
-      {
-        "question": "",
-        "type": ""
       },
       {
         "question": "Creo que sé hacia dónde voy y otros me siguen.",
@@ -624,10 +568,6 @@ export default {
         "type": "faith"
       },
       {
-        "question": "",
-        "type": ""
-      },
-      {
         "question": "Soy consciente del reino espiritual y sé cuándo Satanás está obrando.",
         "type": "discerning_between_spirits"
       },
@@ -638,10 +578,6 @@ export default {
       {
         "question": "Creo que tengo lo que se necesita para enseñar un estudio bíblico o liderar una pequeña conversación grupal.",
         "type": "teaching"
-      },
-      {
-        "question": "",
-        "type": ""
       },
       {
         "question": "Disfrutaría liderar, inspirar y motivar a otros a involucrarse más en la obra de Dios. ",
@@ -704,10 +640,6 @@ export default {
         "type": "faith"
       },
       {
-        "question": "",
-        "type": ""
-      },
-      {
         "question": "Creo que tengo el don de discernir entre espíritus.",
         "type": "discerning_between_spirits"
       },
@@ -718,10 +650,6 @@ export default {
       {
         "question": "Estoy dispuesta/o a pasar un tiempo extra estudiando principios bíblicos con el fin de comunicarlos claramente a otros.",
         "type": "teaching"
-      },
-      {
-        "question": "",
-        "type": ""
       },
       {
         "question": "Tengo un deseo de liderar, inspirar y emitir visiones a grupos de personas.",
@@ -784,10 +712,6 @@ export default {
         "type": "faith"
       },
       {
-        "question": "",
-        "type": ""
-      },
-      {
         "question": "Hay veces cuando puedo discernir si los motivos de una persona no son puros.",
         "type": "discerning_between_spirits"
       },
@@ -798,10 +722,6 @@ export default {
       {
         "question": "Creo tener el don de enseñar.",
         "type": "teaching"
-      },
-      {
-        "question": "",
-        "type": ""
       },
       {
         "question": "Me gusta liderar a las personas y que encuentren respuestas bíblicas que les ayuden en sus vidas. ",
@@ -864,10 +784,6 @@ export default {
         "type": "faith"
       },
       {
-        "question": "",
-        "type": ""
-      },
-      {
         "question": "Algunas veces me doy cuenta cuando una enseñanza no verdadera y es engañosa.",
         "type": "discerning_between_spirits"
       },
@@ -878,10 +794,6 @@ export default {
       {
         "question": "Otros me dicen que presento el evangelio en una manera fácil de comprender.",
         "type": "teaching"
-      },
-      {
-        "question": "",
-        "type": ""
       },
       {
         "question": "Creo tener habilidades de liderazgo.",
@@ -944,10 +856,6 @@ export default {
         "type": "faith"
       },
       {
-        "question": "",
-        "type": ""
-      },
-      {
         "question": "Creo tener el don de discernir entre espíritus.",
         "type": "discerning_between_spirits"
       },
@@ -958,10 +866,6 @@ export default {
       {
         "question": "He llevado a otras personas a entender mejor la fé cristiana a través de mis enseñanzas.",
         "type": "teaching"
-      },
-      {
-        "question": "",
-        "type": ""
       },
       {
         "question": "Suelo ser el líder del grupo o tomar la iniciativa si nadie lo hace.",
@@ -984,13 +888,13 @@ export default {
 
   sv_SE: {
     intro_text: `
-      <h1>ONLINE ANDLIGA GÅVOR-TEST</h1>
+      <h1>ONLINE-TEST I ANDLIGA GÅVOR</h1>
       <p>Gradera varje påstående efter hur väl det stämmer in på dig.</p>
       <p>0 = Inte alls, 1 = Lite, 2 = Delvis, 3 = Mycket</p>
-      <p>Vid slutet av testet får du en indikation på dina top tre andliga gåvor som Gud har lagt ner i dig. Inget test är 100% exakt men det kan ge en god indiktation.</p>
+      <p>Vid slutet av testet får du en indikation på dina topp tre andliga gåvor som Gud har lagt ner i dig. Inget test är 100% exakt men det kan ge en god indiktation.</p>
       <p>Vi hoppas att detta ska välsigna dig!</p>
     `,
-    test: [
+    test:[
       {
         "question": "Jag skulle kunna bli beskrivas som en \"bryr-mig-om-andra\" person.",
         "type": "serving"
@@ -1036,10 +940,6 @@ export default {
         "type": "faith"
       },
       {
-        "question": "",
-        "type": ""
-      },
-      {
         "question": "Jag tycker att det är enkelt att urskilja om något är från Gud eller inte.",
         "type": "discerning_between_spirits"
       },
@@ -1050,10 +950,6 @@ export default {
       {
         "question": "Jag tycker om att förklara bibliska sanningar till människor.",
         "type": "teaching"
-      },
-      {
-        "question": "",
-        "type": ""
       },
       {
         "question": "Jag tror jag vet var jag är påväg och andra förljer efter.",
@@ -1116,10 +1012,6 @@ export default {
         "type": "faith"
       },
       {
-        "question": "",
-        "type": ""
-      },
-      {
         "question": "Jag är medveten om den andliga verkligheten och jag kan urskilja när Satan har sitt finger med i bilden.",
         "type": "discerning_between_spirits"
       },
@@ -1130,10 +1022,6 @@ export default {
       {
         "question": "Jag tror att jag har vad som krävs för att undervisa i ett bibelstuide eller leda en connectgruppsdiskussion.",
         "type": "teaching"
-      },
-      {
-        "question": "",
-        "type": ""
       },
       {
         "question": "Jag skulle tycka om att leda, inspirera och motivera andra att bli involverade i Guds verk.",
@@ -1196,10 +1084,6 @@ export default {
         "type": "faith"
       },
       {
-        "question": "",
-        "type": ""
-      },
-      {
         "question": "Jag tror att jag har gåvan att skilja mellan andar.",
         "type": "discerning_between_spirits"
       },
@@ -1210,10 +1094,6 @@ export default {
       {
         "question": "Jag är bered att lägga ner extra tid för att studera bibliska principer för att sedan kommunicera dem tydligt för andra.",
         "type": "teaching"
-      },
-      {
-        "question": "",
-        "type": ""
       },
       {
         "question": "Jag har en längtan att leda, inspirera och bringa klarhet till grupper av människor.",
@@ -1276,10 +1156,6 @@ export default {
         "type": "faith"
       },
       {
-        "question": "",
-        "type": ""
-      },
-      {
         "question": "Ibland kan jag urskilja om någons intentioner inte är rena.",
         "type": "discerning_between_spirits"
       },
@@ -1290,10 +1166,6 @@ export default {
       {
         "question": "Jag tror att jag har gåvan att undervisa.",
         "type": "teaching"
-      },
-      {
-        "question": "",
-        "type": ""
       },
       {
         "question": "Jag tycker om att leda männsikor och hjälpa dem att hitta bibliska svar som hjälper dem i deras liv.",
@@ -1356,10 +1228,6 @@ export default {
         "type": "faith"
       },
       {
-        "question": "",
-        "type": ""
-      },
-      {
         "question": "Ibland kan jag uppleva när undervisning inte är rätt och vilseledande.",
         "type": "discerning_between_spirits"
       },
@@ -1370,10 +1238,6 @@ export default {
       {
         "question": "Jag får höra av andra att jag förmdelar evangeliet på ett sätt som är enkelt att förstå.",
         "type": "teaching"
-      },
-      {
-        "question": "",
-        "type": ""
       },
       {
         "question": "Jag tror att jag har ledaregenskaper.",
@@ -1436,10 +1300,6 @@ export default {
         "type": "faith"
       },
       {
-        "question": "",
-        "type": ""
-      },
-      {
         "question": "Jag tror att jag har gåvan att urskilja mellan andar.",
         "type": "discerning_between_spirits"
       },
@@ -1450,10 +1310,6 @@ export default {
       {
         "question": "På grund av min undervisning har jag fört andra till en djupare förståelse för den kristna tron.",
         "type": "teaching"
-      },
-      {
-        "question": "",
-        "type": ""
       },
       {
         "question": "När jag är in en grupp är jag vanligtvis ledaren eller så tar jag täten om ingen annan gör det.",
