@@ -18,7 +18,7 @@ export default function ({ setTopGifts, questions, setQuestionById }) {
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const nextQuestion = currentQuestion + 1
   const previousQuestion = currentQuestion - 1
-  const isAnswered = questions[currentQuestion].value !== undefined
+  const showNext = questions[currentQuestion].value !== undefined && (currentQuestion + 1) < questions.length
 
   const [error, setError] = useState(false)
 
@@ -51,8 +51,10 @@ export default function ({ setTopGifts, questions, setQuestionById }) {
   function setQuestionValueById (id) {
     return function (value) {
       setError(false)
-      setCurrentQuestion(nextQuestion)
       setQuestionById(id, value)
+      if (nextQuestion < questions.length) {
+        setCurrentQuestion(nextQuestion)
+      }
     }
   }
 
@@ -64,7 +66,6 @@ export default function ({ setTopGifts, questions, setQuestionById }) {
       <div className="questions">
         {questions.map((question, index) => {
           const questionId = question.type + '@' + index
-
 
           return (
             <fieldset
@@ -82,7 +83,6 @@ export default function ({ setTopGifts, questions, setQuestionById }) {
                     id={[questionId, i].join('.')}
                     checked={question.value === i}
                     value={i}
-                    name={[questionId, i].join('.')}
                     setValue={setQuestionValueById(index)} />
                 ))
               }
@@ -92,7 +92,7 @@ export default function ({ setTopGifts, questions, setQuestionById }) {
         }
       </div>
       {currentQuestion > 0 && <button onClick={() => setCurrentQuestion(previousQuestion)} type="button">Previous</button>}
-      {isAnswered && <button onClick={() => setCurrentQuestion(nextQuestion)} type="button">Next</button>}
+      {showNext && <button onClick={() => setCurrentQuestion(nextQuestion)} type="button">Next</button>}
 
       <p className={`error-text${error ? ' active' : ''}`}>Please answer all statements first</p>
       <button type="submit" className="btn">Show me my top gifts!</button>
