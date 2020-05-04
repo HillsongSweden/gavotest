@@ -75,7 +75,8 @@ export default function ({ setTopGifts, questions, setQuestionById }) {
           return (
             <fieldset
               key={questionId}
-              className={`question ` + classFactory({
+              className={classFactory({
+                question: true,
                 active: index === currentQuestion,
                 done: index < currentQuestion
               })}>

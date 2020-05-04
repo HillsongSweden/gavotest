@@ -42,10 +42,10 @@
 
 .App main {
   max-width: 800px;
-  min-width: 60vw;
+  min-width: 70vw;
   margin: 0 auto;
   background: #b7adad;
-  padding: 0.5em;
+  padding: 1em;
   border-radius: 5px;
   box-sizing: border-box;
   overflow: hidden;
@@ -221,7 +221,7 @@ ul li .checkmark {
 }
 
 .question {
-  transform: translateX(100%);
+  transform: translateX(150%);
   transition: 300ms transform;
   transition-delay: 300ms;
   position: absolute;
@@ -236,5 +236,5 @@ ul li .checkmark {
 }
 
 .question.done {
-  transform: translateX(-100%);
+  transform: translateX(-150%);
 }
