@@ -96,7 +96,7 @@ export default function ({ setTopGifts, questions, setQuestionById }) {
         })
         }
       </div>
-      <button onClick={() => setCurrentQuestion(previousQuestion)} type="button">Previous</button>
+      {currentQuestion > 0 && <button onClick={() => setCurrentQuestion(previousQuestion)} type="button">Previous</button>}
       {isAnswered && <button onClick={() => setCurrentQuestion(nextQuestion)} type="button">Next</button>}
 
       <p className={`error-text${error ? ' active' : ''}`}>Please answer all statements first</p>
@@ -104,5 +104,3 @@ export default function ({ setTopGifts, questions, setQuestionById }) {
     </form>
   )
 }
-
-// ${index === currentQuestion ? ' active' : ''}${currentQuestion > index ? ' done' : ''}`
