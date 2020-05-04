@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import ProgressBar from './ProgressBar'
-import useLocale from '../hooks/useLocale'
 import Checkbox from './Checkbox'
+import translations from '../functions/questions2'
 
 function classFactory (classes) {
   return Object.entries(classes).reduce((acc, cur) => {
@@ -12,8 +12,7 @@ function classFactory (classes) {
   }, '')
 }
 
-export default function ({ setTopGifts, questions, setQuestionById }) {
-  const translations = useLocale()
+export default function ({ setTopGifts, questions, setQuestionById, language }) {
   const completedCount = questions.filter(q => q.value !== undefined).length
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const nextQuestion = currentQuestion + 1
@@ -61,7 +60,7 @@ export default function ({ setTopGifts, questions, setQuestionById }) {
   return (
     <form onSubmit={handleForm}>
       <ProgressBar completed={completedCount} total={questions.length} />
-      <div dangerouslySetInnerHTML={{ __html: translations.intro_text }}></div>
+      <div dangerouslySetInnerHTML={{ __html: translations.intro_text[language] }}></div>
 
       <div className="questions">
         {questions.map((question, index) => {
@@ -75,27 +74,31 @@ export default function ({ setTopGifts, questions, setQuestionById }) {
                 active: index === currentQuestion,
                 done: index < currentQuestion
               })}>
-              <label>{question.question}</label>
-              {
-                Array(4).fill().map((_, i) => (
-                  <Checkbox
-                    key={i}
-                    id={[questionId, i].join('.')}
-                    checked={question.value === i}
-                    value={i}
-                    setValue={setQuestionValueById(index)} />
-                ))
-              }
+              <label>{question.question[language]}</label>
+              <div className="grading">
+                {
+                  Array(4).fill().map((_, i) => (
+                    <span key={i}>
+                      <span>{i}</span>
+                      <Checkbox
+                        id={[questionId, i].join('.')}
+                        checked={question.value === i}
+                        value={i}
+                        setValue={setQuestionValueById(index)} />
+                    </span>
+                  ))
+                }
+              </div>
             </fieldset>
           )
         })
         }
       </div>
-      {currentQuestion > 0 && <button onClick={() => setCurrentQuestion(previousQuestion)} type="button">Previous</button>}
-      {showNext && <button onClick={() => setCurrentQuestion(nextQuestion)} type="button">Next</button>}
+      {currentQuestion > 0 && <button onClick={() => setCurrentQuestion(previousQuestion)} type="button">{translations.previous[language]}</button>}
+      {showNext && <button onClick={() => setCurrentQuestion(nextQuestion)} type="button">{translations.next[language]}</button>}
 
-      <p className={`error-text${error ? ' active' : ''}`}>Please answer all statements first</p>
-      <button type="submit" className="btn">Show me my top gifts!</button>
+      <p className={`error-text${error ? ' active' : ''}`}>{translations.please_answer_all_statements_first[language]}</p>
+      <button type="submit" className="btn">{translations.get_your_results[language]}</button>
     </form>
   )
 }

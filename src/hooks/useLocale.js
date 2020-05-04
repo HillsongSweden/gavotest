@@ -1,13 +1,14 @@
-import translations from '../functions/questions'
+import { useState } from 'react'
 
-export default function useLocale () {
-  let locale = new URL(window.location).searchParams.get('lang')
+// let locale = new URL(window.location).searchParams.get('lang')
 
-  if (locale) {
-    window.localStorage.setItem('locale', locale)
-  } else {
-    locale = window.localStorage.getItem('locale')
-  }
+// if (locale) {
+//   window.localStorage.setItem('locale', locale)
+// } else {
+//   locale = window.localStorage.getItem('locale')
+// }
 
-  return translations[locale || 'sv_SE']
+export default function useLocale (initial = 'sv_SE') {
+  const [language, setLanguage] = useState(initial)
+  return [language, setLanguage]
 }

@@ -67,8 +67,9 @@
   height: 28px;
   position: relative;
   display: inline-block;
-  margin: 1em;
+  margin: 1.2em;
   border-radius: 50%;
+  margin-left: .5em;
 }
 
 .App form label.radiobutton::before {
@@ -237,4 +238,29 @@ ul li .checkmark {
 
 .question.done {
   transform: translateX(-150%);
+}
+
+.grading, .grading span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.language-picker {
+  margin-left: auto;
+}
+.language-picker img {
+  filter: grayscale(100%);
+  cursor: pointer;
+  transition: 300ms filter;
+  width: 60px;
+  margin-left: 10px;
+}
+
+.language-picker img.active {
+  filter: grayscale(0%);
+}
+
+.ec-logo {
+  max-width: 100%;
 }

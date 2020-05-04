@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import Dropdown from './Dropdown'
 
 import descriptions from '../functions/descriptions'
+import translations from '../functions/questions2'
 
 const CAMPUSES = [
   'Stockholm City',
@@ -13,10 +14,13 @@ const CAMPUSES = [
   'Örebro'
 ]
 
-export default function ({ topGifts, resetForm }) {
+export default function ({ topGifts, resetForm, language }) {
   const [email, setEmail] = useState('')
   const [campus, setCampus] = useState('Stockholm City')
   const [emailSent, setEmailSent] = useState(false)
+
+  console.log(language)
+  console.log(translations)
 
   async function sendResult () {
     if (!email.trim()) return
@@ -26,32 +30,32 @@ export default function ({ topGifts, resetForm }) {
         topGifts,
         email,
         campus,
-        lang: new URL(window.location).searchParams.get('lang') || 'sv_SE'
+        lang: language
       })
       .catch(console.error)
   }
 
   return (
     <div>
-      <h1>These are your top three spiritual gifts</h1>
+      <h1>{translations.these_are_your_top_three[language]}</h1>
       {topGifts.map((g, i) => {
         return (
           <div key={i} dangerouslySetInnerHTML={{ __html: descriptions[g] }}></div>
         )
       })}
       <div className="email-result">
-        <h3>Send your results to yourself</h3>
+        <h3>{translations.send_your_results_to_yourself[language]}</h3>
         <div className="form-group">
-          <Dropdown options={CAMPUSES} onSelect={setCampus} placeholderText="Select your campus" />
+          <Dropdown options={CAMPUSES} onSelect={setCampus} placeholderText={translations.select_your_campus[language]} />
         </div>
         <div className="form-group">
           <input
             type="email"
             value={email}
             onChange={e => setEmail(e.target.value)}
-            placeholder="Your email address" />
+            placeholder={translations.email[language]} />
         </div>
-        <button className="btn" onClick={sendResult}>Send the email</button>
+        <button className="btn" onClick={sendResult}>{translations.send[language]}</button>
       </div>
     </div>
   )
