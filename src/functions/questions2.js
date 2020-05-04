@@ -1,4 +1,15 @@
 export default {
+  online_gift_test: {
+    en_GB: 'Online spiritual gifts test',
+    sv_SE: 'Online-test i andliga gåvor',
+    es_ES: 'Test Online de Dones Espirituales'
+  },
+  thank_you_for_taking_the_test: {
+    en_GB: 'Thank you for taking the online spiritual gifts test!',
+    sv_SE: 'Tack för att du genomförde online-testet i andliga gåvor!',
+    es_ES: '¡Gracias por tomar el examen de dones espirituales en línea!'
+
+  },
   next: {
     en_GB: 'Next',
     sv_SE: 'Nästa',
@@ -56,14 +67,14 @@ export default {
   },
   intro_text: {
     en_GB: `
-      <h1>ONLINE SPIRITUAL GIFTS TEST</h1>
+      <h1>Online spiritual gifts test</h1>
       <p>Grade each statement if according to how you feel it is true for you.</p>
       <p>0 = Not at all, 1 = Little, 2 = Some, 3 = Much</p>
       <p>At the end of this test you will get an indication of the top three spiritual gifts God has placed in you. No test is 100% accurate but they can give a good indication.</p>
       <p>We hope this will be a blessing to you!</p>
     `,
     sv_SE: `
-      <h1>ONLINE-TEST I ANDLIGA GÅVOR</h1>
+      <h1>Online-test i andliga gåvor</h1>
       <p>Gradera varje påstående efter hur väl det stämmer in på dig.</p>
       <p>0 = Inte alls, 1 = Lite, 2 = Delvis, 3 = Mycket</p>
       <p>Vid slutet av testet får du en indikation på dina topp tre andliga gåvor som Gud har lagt ner i dig. Inget test är 100% exakt men det kan ge en god indiktation.</p>

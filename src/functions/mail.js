@@ -12,6 +12,7 @@ const mailgun = require('mailgun-js')({
 })
 
 const descriptions = require('./descriptions')
+const translations = require('./questions2')
 
 const GOOGLE_AUTH = {
   type: 'service_account',
@@ -38,28 +39,30 @@ const mailgunPromise = (data) => {
 }
 
 exports.handler = async (event) => {
-  const { topGifts, email, campus, lang } = JSON.parse(event.body)
+  const { topGifts, email, campus, language, shareWithCampusPastor } = JSON.parse(event.body)
 
-  try {
-    const doc = new GoogleSpreadsheet(GOOGLE_SHEET_ID)
-    await doc.useServiceAccountAuth(GOOGLE_AUTH)
-
-    await doc.loadInfo()
-    const sheet = doc.sheetsByIndex[0]
-    const gifts = topGifts.reduce((acc, cur) => {
-      acc[cur] = true
-      return acc
-    }, {})
-
-    await sheet.addRow({
-      email, 
-      campus,
-      language: lang,
-      ...gifts,
-    })
-  } catch (error) {
-    console.error('SOMETHING IS WRONG!')
-    console.error(error)
+  if (shareWithCampusPastor) {
+    try {
+      const doc = new GoogleSpreadsheet(GOOGLE_SHEET_ID)
+      await doc.useServiceAccountAuth(GOOGLE_AUTH)
+      
+      await doc.loadInfo()
+      const sheet = doc.sheetsByIndex[0]
+      const gifts = topGifts.reduce((acc, cur) => {
+        acc[cur] = true
+        return acc
+      }, {})
+      
+      await sheet.addRow({
+        email, 
+        campus,
+        language,
+        ...gifts,
+      })
+    } catch (error) {
+      console.error('SOMETHING IS WRONG!')
+      console.error(error)
+    }
   }
 
   const giftMarkup = topGifts.map(gift => descriptions[gift]).join('')
@@ -67,7 +70,7 @@ exports.handler = async (event) => {
   const data = {
     from: 'Online Evening College <system@hillsong.se>',
     to: email,
-    subject: 'Gåvotest',
+    subject: translations.online_gift_test[language],
     html: `
       <div
         style="
@@ -80,8 +83,8 @@ exports.handler = async (event) => {
           font-size: 1.3em;
         ">
         <img src="https://d9nqqwcssctr8.cloudfront.net/wp-content/uploads/2020/03/31160601/EVENING-COLLEGE-logo-700x467.png" style="max-width: 300px;">
-        <h1>Tack att du gjorde gåvotestet</h1>
-        <p>Vi hoppas att du lärde dig något nytt om dig själv. Här dina topp tre andliga gåvor:</p>
+        <h1>${translations.thank_you_for_taking_the_test[language]}</h1>
+        <p>${translations.these_are_your_top_three[language]}</p>
         <hr>
         ${giftMarkup}
       </div>

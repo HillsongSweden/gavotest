@@ -18,9 +18,7 @@ export default function ({ topGifts, resetForm, language }) {
   const [email, setEmail] = useState('')
   const [campus, setCampus] = useState('Stockholm City')
   const [emailSent, setEmailSent] = useState(false)
-
-  console.log(language)
-  console.log(translations)
+  const [shareWithCampusPastor, setShareWithCampusPastor] = useState(false)
 
   async function sendResult () {
     if (!email.trim()) return
@@ -30,7 +28,8 @@ export default function ({ topGifts, resetForm, language }) {
         topGifts,
         email,
         campus,
-        lang: language
+        shareWithCampusPastor,
+        language
       })
       .catch(console.error)
   }
@@ -53,6 +52,15 @@ export default function ({ topGifts, resetForm, language }) {
             type="email"
             value={email}
             onChange={e => setEmail(e.target.value)}
+            placeholder={translations.email[language]} />
+        </div>
+        <div className="form-group">
+          <label htmlFor="shareWithPastor">{translations.share_your_results_with_your_campus_pastor[language]}</label>
+          <input
+            id="shareWithPastor"
+            type="checkbox"
+            checked={shareWithCampusPastor}
+            onChange={e => setShareWithCampusPastor(e.target.checked)}
             placeholder={translations.email[language]} />
         </div>
         <button className="btn" onClick={sendResult}>{translations.send[language]}</button>
