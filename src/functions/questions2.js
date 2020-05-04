@@ -42,7 +42,7 @@ module.exports = {
   },
   share_your_results_with_your_campus_pastor: {
     en_GB: 'Share your results with your campus pastor',
-    sv_SE: 'Välj ditt campus',
+    sv_SE: 'Dela ditt resultat med din campuspastor',
     es_ES: 'Comparta sus resultados con el pastor de su campus'
   },
   these_are_your_top_three: {

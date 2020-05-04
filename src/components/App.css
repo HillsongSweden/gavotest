@@ -48,7 +48,7 @@
   padding: 1em;
   border-radius: 5px;
   box-sizing: border-box;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .App form fieldset {

@@ -36,7 +36,11 @@ function App() {
       <main>
         <LanguagePicker language={language} setLanguage={setLanguage} />
         {topGifts
-          ? <GiftResult topGifts={topGifts} resetForm={() => setTopGifts()} language={language} />
+          ? <GiftResult topGifts={topGifts} resetForm={() => {
+              setTopGifts()
+              setQuestions(translations.test)
+            }}
+            language={language} />
           : <GiftForm setTopGifts={setTopGifts} questions={questions} setQuestionById={setQuestionById} language={language} />
         }
       </main>
