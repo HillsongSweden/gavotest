@@ -38,7 +38,7 @@ const mailgunPromise = (data) => {
 }
 
 exports.handler = async (event) => {
-  const { topGifts, email, campus } = JSON.parse(event.body)
+  const { topGifts, email, campus, lang } = JSON.parse(event.body)
 
   try {
     const doc = new GoogleSpreadsheet(GOOGLE_SHEET_ID)
@@ -50,7 +50,13 @@ exports.handler = async (event) => {
       acc[cur] = true
       return acc
     }, {})
-    await sheet.addRow({ email, ...gifts, campus })
+
+    await sheet.addRow({
+      email, 
+      campus,
+      language: lang,
+      ...gifts,
+    })
   } catch (error) {
     console.error('SOMETHING IS WRONG!')
     console.error(error)
