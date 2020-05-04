@@ -16,7 +16,7 @@ if (locale) {
 function App() {
   const [questions, setQuestions] = useState(translations.test)
   const [topGifts, setTopGifts] = useState()
-  const [language, setLanguage] = useState(locale)
+  const [language, setLanguage] = useState(locale || 'sv_SE')
 
   function setQuestionById (id, value) {
     setQuestions(
