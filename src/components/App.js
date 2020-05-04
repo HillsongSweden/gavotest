@@ -2,10 +2,11 @@ import React, { useState } from 'react'
 import GiftForm from './GiftForm'
 import GiftResult from './GiftResult'
 import './App.css'
-import initialQuestions from '../functions/questions'
+import useLocale from '../hooks/useLocale'
 
 function App() {
-  const [questions, setQuestions] = useState(initialQuestions)
+  const translations = useLocale()
+  const [questions, setQuestions] = useState(translations.test)
   const [topGifts, setTopGifts] = useState()
 
   function setQuestionById (id, value) {
@@ -22,6 +23,7 @@ function App() {
 
   return (
     <div className="App">
+      <img src="ec-logo.png" alt="Evening College Logo"/>
       <main>
         {topGifts
           ? <GiftResult topGifts={topGifts} resetForm={() => setTopGifts()} />

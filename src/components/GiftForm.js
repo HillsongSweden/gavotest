@@ -1,8 +1,31 @@
 import React, { useState } from 'react'
 import ProgressBar from './ProgressBar'
+import useLocale from '../hooks/useLocale'
+
+function Checkbox ({ value, setValue, checked }) {
+  return (
+    <label className={`radiobutton${checked ? ' active' : ''}`}>
+      <input type="radio" value={value} checked={checked} onChange={e => setValue(e.target.value)} />
+    </label>
+  )
+}
+
+function classFactory (classes) {
+  return Object.entries(classes).reduce((acc, cur) => {
+    if (cur[1]) {
+      acc += ' ' + cur[0]
+    }
+    return acc
+  }, '')
+}
 
 export default function ({ setTopGifts, questions, setQuestionById }) {
+  const translations = useLocale()
   const completedCount = questions.filter(q => q.value !== undefined).length
+  const [currentQuestion, setCurrentQuestion] = useState(0)
+  const nextQuestion = currentQuestion + 1
+  const previousQuestion = currentQuestion - 1
+  const isAnswered = questions[currentQuestion].value !== undefined
 
   const [error, setError] = useState(false)
 
@@ -31,38 +54,55 @@ export default function ({ setTopGifts, questions, setQuestionById }) {
 
     setTopGifts(topThreeGifts)
   }
-  
-  
+
+  function setQuestionValueById (id) {
+    return function (value) {
+      setError(false)
+      setCurrentQuestion(nextQuestion)
+      setQuestionById(id, value)
+    }
+  }
+
   return (
     <form onSubmit={handleForm}>
       <ProgressBar completed={completedCount} total={questions.length} />
+      <div dangerouslySetInnerHTML={{ __html: translations.intro_text }}></div>
 
-      <h1>What are your top gifts?</h1>
+      <div className="questions">
+        {questions.map((question, index) => {
+          const questionId = question.type + '@' + index
 
-      {questions.map((question, index) => {
-        const questionId = question.type + '@' + index
+          return (
+            <fieldset
+              key={questionId}
+              className={`question ` + classFactory({
+                active: index === currentQuestion,
+                done: index < currentQuestion
+              })}>
+              <label htmlFor={questionId}>
+                {question.question}
+              </label>
+              {
+                Array(4).fill().map((_, i) => (
+                  <Checkbox
+                    key={i}
+                    checked={question.value === i}
+                    value={i}
+                    setValue={setQuestionValueById(index)} />
+                ))
+              }
+            </fieldset>
+          )
+        })
+        }
+      </div>
+      <button onClick={() => setCurrentQuestion(previousQuestion)} type="button">Previous</button>
+      {isAnswered && <button onClick={() => setCurrentQuestion(nextQuestion)} type="button">Next</button>}
 
-        return (
-          <fieldset key={questionId}>
-            <label htmlFor={questionId}>
-              {question.question}
-            </label>
-            {
-              Array(4).fill().map((_, i) => (
-                <label htmlFor={questionId + i} className={`radiobutton ${question.value === i ? ' active' : ''}`} key={i}>
-                  <input id={questionId + i} type="radio" value={i} checked={question.value === i} onChange={e => {
-                    setError(false)
-                    setQuestionById(index, e.target.value)
-                  }} />
-                </label>
-              ))
-            }
-          </fieldset>
-        )
-      })
-      }
-      <p className={`error-text ${error && 'active'}`}>Please answer all statements first</p>
+      <p className={`error-text${error ? ' active' : ''}`}>Please answer all statements first</p>
       <button type="submit" className="btn">Show me my top gifts!</button>
     </form>
   )
 }
+
+// ${index === currentQuestion ? ' active' : ''}${currentQuestion > index ? ' done' : ''}`

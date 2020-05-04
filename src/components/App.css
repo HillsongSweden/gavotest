@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: #ccc7c4;
+  background-color: #191919;
   padding: 1em;
   min-height: 100vh;
   display: flex;
@@ -42,11 +42,13 @@
 
 .App main {
   max-width: 800px;
+  min-width: 60vw;
   margin: 0 auto;
   background: #b7adad;
   padding: 0.5em;
   border-radius: 5px;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .App form fieldset {
@@ -211,4 +213,28 @@ ul li .checkmark {
 .email-result .dropdown > div, .email-result .btn, .email-result input[type=text] {
   width: 100%;
   font-size: 1em;
+}
+
+.questions {
+  position: relative;
+  min-height: 20vh;
+}
+
+.question {
+  transform: translateX(100%);
+  transition: 300ms transform;
+  transition-delay: 300ms;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.question.active {
+  transform: translateX(0%);
+}
+
+.question.done {
+  transform: translateX(-100%);
 }
