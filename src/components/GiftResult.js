@@ -22,7 +22,12 @@ export default function ({ topGifts, resetForm }) {
     if (!email.trim()) return
 
     const response = await axios
-      .post('/.netlify/functions/mail', { topGifts, email, campus })
+      .post('/.netlify/functions/mail', {
+        topGifts,
+        email,
+        campus,
+        lang: new URL(window.location).searchParams.get('lang') || 'sv_SE'
+      })
       .catch(console.error)
   }
 
