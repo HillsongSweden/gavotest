@@ -62,6 +62,8 @@ export default function ({ setTopGifts, questions, setQuestionById, language }) 
       <ProgressBar completed={completedCount} total={questions.length} />
       <div dangerouslySetInnerHTML={{ __html: translations.intro_text[language] }}></div>
 
+      <hr />
+
       <div className="questions">
         {questions.map((question, index) => {
           const questionId = question.type + '@' + index
