@@ -44,7 +44,7 @@
   max-width: 800px;
   min-width: 70vw;
   margin: 0 auto;
-  background: #b7adad;
+  background: #3f3e44;
   padding: 1em;
   border-radius: 5px;
   box-sizing: border-box;
@@ -94,7 +94,7 @@
 }
 
 .progress-bar {
-  background: #000;
+  background: #fff;
   height: 6px;
   left: 0;
   position: fixed;
