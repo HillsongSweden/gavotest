@@ -294,7 +294,7 @@ module.exports = {
     {
       "type": "leadership",
       "question": {
-        "sv_SE": "Jag tror jag vet var jag är påväg och andra förljer efter.",
+        "sv_SE": "Jag vet vart jag är på väg och andra verkar följa mig.",
         "en_GB": "I believe I know where I am going and others seem to follow.",
         "es_ES": "Creo que sé hacia dónde voy y otros me siguen."
       }
@@ -310,7 +310,7 @@ module.exports = {
     {
       "type": "miracles",
       "question": {
-        "sv_SE": "Många otroliga verk av Gud har påverkat andra genom mig.",
+        "sv_SE": "Gud har gjort många fantastiska verk genom mig som påverkat andra.",
         "en_GB": "Many incredible acts of God have happened to others through me.",
         "es_ES": "Muchos hechos de Dios han sucedido por medio de mí."
       }
@@ -318,7 +318,7 @@ module.exports = {
     {
       "type": "interpretation_of_tongues",
       "question": {
-        "sv_SE": "Det har funnits ett tillfälle när jag har lyssnat på ett okänt språk och varit förmögen att översätta det som sades.",
+        "sv_SE": "Det har funnits tillfällen då jag hört tungotal och har kunnat översätta det som sades.",
         "en_GB": "There has been a time when I have heard others speak in an unknown language and I was able to interpret what he or she said.",
         "es_ES": "Ha habido un tiempo cuando he escuchado a otros hablar en un lenguas desconocidas y he podido interpretar lo que ha dicho."
       }
@@ -366,7 +366,7 @@ module.exports = {
     {
       "type": "healing",
       "question": {
-        "sv_SE": "Jag har helat en fysiskt handikapad person.",
+        "sv_SE": "Jag har helat en fysiskt handikappad person.",
         "en_GB": "I have healed a physically disabled person.",
         "es_ES": "He sanado a una persona con discapacidad física."
       }
@@ -398,7 +398,7 @@ module.exports = {
     {
       "type": "word_of_knowledge",
       "question": {
-        "sv_SE": "Ibland får jag möjligheten att ge människor specifika uppenbarelser om nuet från skriften.",
+        "sv_SE": "Ibland får jag möjligheten att ge människor specifika uppenbarelser om pågående situationer från skriften.",
         "en_GB": "Sometimes I get to give people specific revelation from the Word exactly at the right time about the present",
         "es_ES": "Algunas veces doy una revelación específica de la Palabra a personas en el momento exacto sobre el presente."
       }
@@ -414,7 +414,7 @@ module.exports = {
     {
       "type": "discerning_between_spirits",
       "question": {
-        "sv_SE": "Jag är medveten om den andliga verkligheten och jag kan urskilja när Satan har sitt finger med i bilden.",
+        "sv_SE": "Jag är medveten om den andliga världen och jag kan urskilja när Satan har ett finger med i bilden.",
         "en_GB": "I am aware of the spiritual realm and know when Satan is at work in things",
         "es_ES": "Soy consciente del reino espiritual y sé cuándo Satanás está obrando."
       }
@@ -438,7 +438,7 @@ module.exports = {
     {
       "type": "leadership",
       "question": {
-        "sv_SE": "Jag skulle tycka om att leda, inspirera och motivera andra att bli involverade i Guds verk.",
+        "sv_SE": "Jag tycker om att leda, inspirera och motivera andra att bli involverade i Guds verk.",
         "en_GB": "I would enjoy leading, inspiring and motivating others to become involved in God’s work.",
         "es_ES": "Disfrutaría liderar, inspirar y motivar a otros a involucrarse más en la obra de Dios. "
       }
@@ -446,7 +446,7 @@ module.exports = {
     {
       "type": "administration_governance",
       "question": {
-        "sv_SE": "jag skulle tycka om att organisera aktiviteter, event och volontärer i kyrkan.",
+        "sv_SE": "Jag skulle tycka om att organisera aktiviteter, event och involvera volontärer i kyrkan.",
         "en_GB": "I would enjoy organising activities, events and volunteers in my Church",
         "es_ES": "Disfrutaría organizar actividades, eventos y voluntarios en mi iglesia."
       }
@@ -478,7 +478,7 @@ module.exports = {
     {
       "type": "helping",
       "question": {
-        "sv_SE": "Jag tänker sällan efter före jag gör något som förmodligen inte kommer ge mig berömmelse.",
+        "sv_SE": "Jag tänker inte efter innan jag gör något som förmodligen inte kommer ge mig berömmelse.",
         "en_GB": "I seldom think twice before doing a task that might not bring me praise.",
         "es_ES": "Raras veces pienso dos veces antes de hacer algo que capaz no me glorifique personalmente."
       }
@@ -574,7 +574,7 @@ module.exports = {
     {
       "type": "teaching",
       "question": {
-        "sv_SE": "Jag är bered att lägga ner extra tid för att studera bibliska principer för att sedan kommunicera dem tydligt för andra.",
+        "sv_SE": "Jag är beredd att lägga ner extra tid för att studera bibliska principer för att sedan kommunicera dem tydligt för andra.",
         "en_GB": "I am willing to spend extra time studying biblical principles in order to communicate them clearly to others.",
         "es_ES": "Estoy dispuesta/o a pasar un tiempo extra estudiando principios bíblicos con el fin de comunicarlos claramente a otros."
       }
@@ -646,7 +646,7 @@ module.exports = {
     {
       "type": "gift_of_tongues",
       "question": {
-        "sv_SE": "Jag tror att jag har gåvan att tala i tungor.",
+        "sv_SE": "Jag tror att jag har tungotalets gåva.",
         "en_GB": "I believe I have the gift of tongues.",
         "es_ES": "Creo tener el don de lenguas."
       }
@@ -758,7 +758,7 @@ module.exports = {
     {
       "type": "serving",
       "question": {
-        "sv_SE": "Jag mår bra när tjänar i kyrkan.",
+        "sv_SE": "Jag mår bra när jag fyller behov i kyrkan.",
         "en_GB": "I feel good when I serve needs at my church.",
         "es_ES": "Me siento bien cuando atiendo a las necesidades de la iglesia."
       }
@@ -790,7 +790,7 @@ module.exports = {
     {
       "type": "gift_of_tongues",
       "question": {
-        "sv_SE": "Jag är medveten om när jag talar i tungor för min skull och när jag verkar i gåvan att tala i tungor för att förmdela ett budksap till andra.",
+        "sv_SE": "Jag är medveten om skillnaden mellan när jag talar i tungor för min egen skull och när jag verkar i gåvan att tala i tungor för att förmedla ett budskap till andra.",
         "en_GB": "I am aware of when I speak in tongues (for my edification) and when I operate in the gift of tongues with a message to others",
         "es_ES": "Estoy consciente de cuando hablo en lenguas (para mi edificación) y cuando uso mi don de lenguas para hacer llegar un mensaje a otros."
       }
@@ -830,7 +830,7 @@ module.exports = {
     {
       "type": "word_of_knowledge",
       "question": {
-        "sv_SE": "Ibland använder Gud mig för att uppenbara och komma med inskikt i en situation.",
+        "sv_SE": "Ibland använder Gud mig för att uppenbara och komma med insikt i en situation.",
         "en_GB": "Sometimes God is using me to reveal insights about a current situation",
         "es_ES": "Hay veces en donde Dios me revela una idea sobre una situación actual."
       }
@@ -982,7 +982,7 @@ module.exports = {
     {
       "type": "faith",
       "question": {
-        "sv_SE": "Andra människor i min grupp litar på att jag har tro och kommer tillmig med deras behov.",
+        "sv_SE": "Andra människor i min värld litar på att jag har tro och kommer till mig med deras behov.",
         "en_GB": "Others people in my group rely on me to have faith and come to me with their needs",
         "es_ES": "Otras personas en mi grupo dependen de mí para tener fé y vienen junto a mí con sus necesidades."
       }
