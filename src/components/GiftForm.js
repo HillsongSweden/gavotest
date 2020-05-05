@@ -75,6 +75,7 @@ export default function ({ questions, setQuestions, language }) {
       <GiftResult topGifts={topGifts} resetForm={() => {
         setTopGifts()
         setQuestions(translations.test)
+        setCurrentQuestion(0)
       }}
         language={language} />
     )
