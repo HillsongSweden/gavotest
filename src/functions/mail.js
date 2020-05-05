@@ -11,8 +11,7 @@ const mailgun = require('mailgun-js')({
   host: MAILGUN_ENDPOINT
 })
 
-const descriptions = require('./descriptions')
-const translations = require('./questions2')
+const translations = require('./translations')
 
 const GOOGLE_AUTH = {
   type: 'service_account',
@@ -33,7 +32,7 @@ const mailgunPromise = (data) => {
       if (error) {
         return rej(error)
       }
-      return res(body, descriptions)
+      return res(body)
     })
   })
 }

@@ -2,8 +2,7 @@ import axios from 'axios'
 import React, { useState } from 'react'
 import Dropdown from './Dropdown'
 
-import descriptions from '../functions/descriptions'
-import translations from '../functions/questions2'
+import translations from '../functions/translations'
 
 const CAMPUSES = [
   'Stockholm City',

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import ProgressBar from './ProgressBar'
 import Checkbox from './Checkbox'
-import translations from '../functions/questions2'
+import translations from '../functions/translations'
 
 function classFactory (classes) {
   return Object.entries(classes).reduce((acc, cur) => {

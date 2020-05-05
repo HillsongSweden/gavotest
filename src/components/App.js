@@ -3,7 +3,7 @@ import GiftForm from './GiftForm'
 import GiftResult from './GiftResult'
 import './App.css'
 import LanguagePicker from './LanguagePicker'
-import translations from '../functions/questions2'
+import translations from '../functions/translations'
 
 let locale = new URL(window.location).searchParams.get('lang')
 
