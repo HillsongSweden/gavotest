@@ -20,7 +20,8 @@ export default function ({ topGifts, resetForm, language }) {
   const [emailSent, setEmailSent] = useState(false)
   const [shareWithCampusPastor, setShareWithCampusPastor] = useState(false)
 
-  async function sendResult () {
+  async function sendResult (e) {
+    e.preventDefault()
     if (!email.trim()) return
 
     try {
@@ -50,13 +51,13 @@ export default function ({ topGifts, resetForm, language }) {
 
   return (
     <div>
-      <h1>{translations.these_are_your_top_three[language]}</h1>
+      <h3>{translations.these_are_your_top_three[language]}</h3>
       {topGifts.map((g, i) => {
         return (
-          <div key={i} dangerouslySetInnerHTML={{ __html: descriptions[g] }}></div>
+          <h2 key={i}>{translations[g][language]}</h2>
         )
       })}
-      <div className="email-result">
+      <form onSubmit={sendResult} className="email-result">
         <h3>{translations.send_your_results_to_yourself[language]}</h3>
         <div className="form-group">
           <Dropdown options={CAMPUSES} onSelect={setCampus} placeholderText={translations.select_your_campus[language]} />
@@ -66,7 +67,7 @@ export default function ({ topGifts, resetForm, language }) {
             type="email"
             value={email}
             onChange={e => setEmail(e.target.value)}
-            placeholder={translations.email[language]} />
+            placeholder={translations.email[language]} required />
         </div>
         <div className="form-group">
           <label htmlFor="shareWithPastor">{translations.share_your_results_with_your_campus_pastor[language]}</label>
@@ -77,8 +78,8 @@ export default function ({ topGifts, resetForm, language }) {
             onChange={e => setShareWithCampusPastor(e.target.checked)}
             placeholder={translations.email[language]} />
         </div>
-        <button className="btn" onClick={sendResult}>{translations.send[language]}</button>
-      </div>
+        <button className="btn" type="submit">{translations.send[language]}</button>
+      </form>
     </div>
   )
 }
