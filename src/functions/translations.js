@@ -105,7 +105,7 @@ module.exports = {
     es_ES: 'Interpretación de lenguas'
   },
   serving: {
-    sv_SE: 'Betjäna',
+    sv_SE: 'Tjäna',
     en_GB: 'Serving',
     es_ES: 'Servicio'
   },
@@ -183,7 +183,7 @@ module.exports = {
       <p>We hope this will be a blessing to you!</p>
     `,
     sv_SE: `
-      <h1>Online-test i andliga gåvor</h1>
+      <h1>Gåvotest</h1>
       <p>Gradera varje påstående efter hur väl det stämmer in på dig.</p>
       <p>0 = Inte alls, 1 = Lite, 2 = Delvis, 3 = Mycket</p>
       <p>Vid slutet av testet får du en indikation på dina topp tre andliga gåvor som Gud har lagt ner i dig. Inget test är 100% exakt men det kan ge en god indiktation.</p>
