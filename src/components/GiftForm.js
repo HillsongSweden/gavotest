@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import ProgressBar from './ProgressBar'
-import Checkbox from './Checkbox'
+import RadioButton from './RadioButton'
 import translations from '../functions/translations'
 
 function classFactory (classes) {
@@ -82,7 +82,7 @@ export default function ({ setTopGifts, questions, setQuestionById, language }) 
                   Array(4).fill().map((_, i) => (
                     <span key={i}>
                       <span>{i}</span>
-                      <Checkbox
+                      <RadioButton
                         id={[questionId, i].join('.')}
                         checked={question.value === i}
                         value={i}
