@@ -96,11 +96,14 @@ export default function ({ setTopGifts, questions, setQuestionById, language }) 
         })
         }
       </div>
-      {currentQuestion > 0 && <button onClick={() => setCurrentQuestion(previousQuestion)} type="button">{translations.previous[language]}</button>}
-      {showNext && <button onClick={() => setCurrentQuestion(nextQuestion)} type="button">{translations.next[language]}</button>}
-
-      <p className={`error-text${error ? ' active' : ''}`}>{translations.please_answer_all_statements_first[language]}</p>
-      <button type="submit" className="btn">{translations.get_your_results[language]}</button>
+      {currentQuestion > 0 && <button className="btn small pull-left" onClick={() => setCurrentQuestion(previousQuestion)} type="button">{translations.previous[language]}</button>}
+      {showNext && <button className="btn small pull-right" onClick={() => setCurrentQuestion(nextQuestion)} type="button">{translations.next[language]}</button>}
+      {nextQuestion === questions.length &&
+        <div>
+          <p className={`error-text${error ? ' active' : ''}`}>{translations.please_answer_all_statements_first[language]}</p>
+          <button type="submit" className="btn">{translations.get_your_results[language]}</button>
+        </div>
+      }
     </form>
   )
 }
