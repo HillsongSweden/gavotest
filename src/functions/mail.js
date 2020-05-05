@@ -65,7 +65,7 @@ exports.handler = async (event) => {
     }
   }
 
-  const giftMarkup = topGifts.map(gift => descriptions[gift]).join('')
+  const giftMarkup = topGifts.map(gift => `<h3>${translations[gift][language]}</h3>`).join('')
 
   const data = {
     from: 'Online Evening College <system@hillsong.se>',

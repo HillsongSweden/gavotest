@@ -1,4 +1,94 @@
 module.exports = {
+  prophecy: {
+    sv_SE: 'Profetia',
+    en_GB: 'Prophecy',
+    es_ES: 'Profecía'
+  },
+  teaching: {
+    sv_SE: 'Undervisning',
+    en_GB: 'Teaching',
+    es_ES: 'Enseñanza'
+  },
+  wisdom: {
+    sv_SE: 'Vishet',
+    en_GB: 'Wisdom',
+    es_ES: 'Sabiduría'
+  },
+  word_of_knowledge: {
+    sv_SE: 'Kunskapens ord',
+    en_GB: 'Word of knowledge',
+    es_ES: 'Palabras de conocimiento'
+  },
+  exhortation: {
+    sv_SE: 'Förmaning',
+    en_GB: 'Exhortation',
+    es_ES: 'Exhortación'
+  },
+  discerning_between_spirits: {
+    sv_SE: 'Skilja mellan andar',
+    en_GB: 'Discerning of spirits',
+    es_ES: 'Discernimiento de espíritus'
+  },
+  giving: {
+    sv_SE: 'Givande',
+    en_GB: 'Giving',
+    es_ES: 'Dar'
+  },
+  helping: {
+    sv_SE: 'Hjälpande',
+    en_GB: 'Helping',
+    es_ES: 'Ayudar'
+  },
+  mercy: {
+    sv_SE: 'Barmhärtighet',
+    en_GB: 'Mercy',
+    es_ES: 'Misericordia'
+  },
+  hospitality: {
+    sv_SE: 'Gästfrihet',
+    en_GB: 'Hospitality',
+    es_ES: 'Hospitalidad'
+  },
+  faith: {
+    sv_SE: 'Tro',
+    en_GB: 'Faith',
+    es_ES: 'Fé'
+  },
+  leadership: {
+    sv_SE: 'Ledarskap',
+    en_GB: 'Leadership',
+    es_ES: 'Liderazgo'
+  },
+  administration_governance: {
+    sv_SE: 'Administration/styrning',
+    en_GB: 'Administration/Governance',
+    es_ES: 'Administración/ Gobernancia'
+  },
+  miracles: {
+    sv_SE: 'Mirakler',
+    en_GB: 'Miracles',
+    es_ES: 'Milagros'
+  },
+  healing: {
+    sv_SE: 'Helande',
+    en_GB: 'Healing',
+    es_ES: 'Sanación'
+  },
+  gift_of_tongues: {
+    sv_SE: 'Tungotal',
+    en_GB: 'Gift of tongues',
+    es_ES: 'Don de lenguas'
+  },
+  interpretation_of_tongues: {
+    sv_SE: 'Uttyda tungotal',
+    en_GB: 'Interpretation of tongues',
+    es_ES: 'Interpretación de lenguas'
+  },
+  serving: {
+    sv_SE: 'Betjäna',
+    en_GB: 'Serving',
+    es_ES: 'Servicio'
+  },
   online_gift_test: {
     en_GB: 'Online spiritual gifts test',
     sv_SE: 'Online-test i andliga gåvor',
