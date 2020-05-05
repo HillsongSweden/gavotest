@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import GiftForm from './GiftForm'
-import GiftResult from './GiftResult'
 import './App.css'
 import LanguagePicker from './LanguagePicker'
 import translations from '../functions/translations'
@@ -14,34 +13,21 @@ if (locale) {
 }
 
 function App() {
+  const [testStarted, setTestStarted] = useState(false)
   const [questions, setQuestions] = useState(translations.test)
-  const [topGifts, setTopGifts] = useState()
   const [language, setLanguage] = useState(locale || 'sv_SE')
-
-  function setQuestionById (id, value) {
-    setQuestions(
-      questions.map(({ ...q }, i) => {
-        if (i === id) {
-          q.value = parseInt(value)
-        }
-  
-        return q
-      })
-    )
-  }
 
   return (
     <div className="App">
       <img src="ec-logo.png" alt="Evening College Logo" className="ec-logo" />
       <main>
         <LanguagePicker language={language} setLanguage={setLanguage} />
-        {topGifts
-          ? <GiftResult topGifts={topGifts} resetForm={() => {
-              setTopGifts()
-              setQuestions(translations.test)
-            }}
-            language={language} />
-          : <GiftForm setTopGifts={setTopGifts} questions={questions} setQuestionById={setQuestionById} language={language} />
+        {testStarted
+          ? <GiftForm questions={questions} setQuestions={setQuestions} language={language} />
+          :  <>
+              <div dangerouslySetInnerHTML={{ __html: translations.intro_text[language] }}></div>
+              <button className="btn" onClick={() => setTestStarted(true)}>Starta testet</button>
+            </>
         }
       </main>
     </div>

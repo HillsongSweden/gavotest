@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import GiftResult from './GiftResult'
 import ProgressBar from './ProgressBar'
 import RadioButton from './RadioButton'
 import translations from '../functions/translations'
@@ -12,22 +13,34 @@ function classFactory (classes) {
   }, '')
 }
 
-export default function ({ setTopGifts, questions, setQuestionById, language }) {
+export default function ({ questions, setQuestions, language }) {
+  const [topGifts, setTopGifts] = useState()
   const completedCount = questions.filter(q => q.value !== undefined).length
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const nextQuestion = currentQuestion + 1
   const previousQuestion = currentQuestion - 1
   const showNext = questions[currentQuestion].value !== undefined && (currentQuestion + 1) < questions.length
-
   const [error, setError] = useState(false)
+
+  function setQuestionById (id, value) {
+    setQuestions(
+      questions.map(({ ...q }, i) => {
+        if (i === id) {
+          q.value = parseInt(value)
+        }
+  
+        return q
+      })
+    )
+  }
 
   async function handleForm (e) {
     e.preventDefault()
 
-    // if (completedCount !== questions.length) {
-    //   setError(true)
-    //   return
-    // }
+    if (completedCount !== questions.length) {
+      setError(true)
+      return
+    }
       
     const giftScores = questions
       .filter(q => q.value)
@@ -57,12 +70,19 @@ export default function ({ setTopGifts, questions, setQuestionById, language }) 
     }
   }
 
+  if (topGifts) {
+    return (
+      <GiftResult topGifts={topGifts} resetForm={() => {
+        setTopGifts()
+        setQuestions(translations.test)
+      }}
+        language={language} />
+    )
+  }
+
   return (
     <form onSubmit={handleForm}>
       <ProgressBar completed={completedCount} total={questions.length} />
-      <div dangerouslySetInnerHTML={{ __html: translations.intro_text[language] }}></div>
-
-      <hr />
 
       <div className="questions">
         {questions.map((question, index) => {
@@ -96,8 +116,8 @@ export default function ({ setTopGifts, questions, setQuestionById, language }) 
         })
         }
       </div>
-      {currentQuestion > 0 && <button className="btn small pull-left" onClick={() => setCurrentQuestion(previousQuestion)} type="button">{translations.previous[language]}</button>}
-      {showNext && <button className="btn small pull-right" onClick={() => setCurrentQuestion(nextQuestion)} type="button">{translations.next[language]}</button>}
+      {currentQuestion > 0 && <button className="btn small navigation backward" onClick={() => setCurrentQuestion(previousQuestion)} type="button">{translations.previous[language]}</button>}
+      {showNext && <button className="btn small navigation forward" onClick={() => setCurrentQuestion(nextQuestion)} type="button">{translations.next[language]}</button>}
       {nextQuestion === questions.length &&
         <div>
           <p className={`error-text${error ? ' active' : ''}`}>{translations.please_answer_all_statements_first[language]}</p>

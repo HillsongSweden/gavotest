@@ -1,4 +1,24 @@
 module.exports = {
+  start_over: {
+    sv_SE: 'Börja om',
+    en_GB: 'Start over',
+    es_ES: 'Comenzar de nuevo'
+  },
+  firstname: {
+    en_GB: 'First name',
+    sv_SE: 'Förnamn',
+    es_ES: 'Nombre de pila'
+  },
+  lastname: {
+    en_GB: 'Last name',
+    sv_SE: 'Efternamn',
+    es_ES: 'Apellido'
+  },
+  another_church: {
+    sv_SE: 'Annan kyrka',
+    en_GB: 'Another church',
+    es_ES: 'Otra iglesia'
+  },
   prophecy: {
     sv_SE: 'Profetia',
     en_GB: 'Prophecy',
@@ -91,14 +111,13 @@ module.exports = {
   },
   online_gift_test: {
     en_GB: 'Online spiritual gifts test',
-    sv_SE: 'Online-test i andliga gåvor',
+    sv_SE: 'Gåvotest',
     es_ES: 'Test Online de Dones Espirituales'
   },
   thank_you_for_taking_the_test: {
-    en_GB: 'Thank you for taking the online spiritual gifts test!',
-    sv_SE: 'Tack för att du genomförde online-testet i andliga gåvor!',
-    es_ES: '¡Gracias por tomar el examen de dones espirituales en línea!'
-
+    en_GB: 'Thank you for taking the spiritual gifts test!',
+    sv_SE: 'Tack för att du genomförde gåvotestet!',
+    es_ES: '¡Gracias por tomar el examen de dones espirituales!'
   },
   next: {
     en_GB: 'Next',

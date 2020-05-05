@@ -38,7 +38,7 @@ const mailgunPromise = (data) => {
 }
 
 exports.handler = async (event) => {
-  const { topGifts, email, campus, language, shareWithCampusPastor } = JSON.parse(event.body)
+  const { topGifts, email, campus, language, firstname, lastname, shareWithCampusPastor } = JSON.parse(event.body)
 
   if (shareWithCampusPastor) {
     try {
@@ -53,6 +53,8 @@ exports.handler = async (event) => {
       }, {})
       
       await sheet.addRow({
+        firstname,
+        lastname,
         email, 
         campus,
         language,

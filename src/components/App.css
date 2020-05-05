@@ -44,27 +44,38 @@
   font-size: .5em;
 }
 
-.pull-right {
-  float: right;
+.navigation {
+  margin: 1em;
+  position: absolute;
+  bottom: 0;
 }
 
-.pull-left {
-  float: left;
+.navigation.forward {
+  right: 0;
+}
+
+.navigation.backward {
+  left: 0;
 }
 
 .App main {
-  max-width: 800px;
-  min-width: 70vw;
+  max-width: 100%;
   margin: 0 auto;
   background: #3f3e44;
   padding: 1em;
   border-radius: 5px;
   box-sizing: border-box;
   overflow-x: hidden;
+  position: relative;
+  width: 800px;
 }
 
 .App form fieldset {
   border: 0;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .App form label {
@@ -146,7 +157,7 @@
   position: relative;
   display: block;
   color: #767676;
-  margin-top: 10px;
+  margin: 10px auto 1em;
 }
 
 .dropdown > div {
@@ -228,9 +239,22 @@ ul li .checkmark {
   font-size: 1em;
 }
 
+.email-result input[type=checkbox] {
+  margin-right: 1em; 
+}
+
+.email-result .campus-pastor {
+  display: inline;
+}
+
 .questions {
   position: relative;
-  min-height: 20vh;
+  min-height: 40vh;
+  box-sizing: border-box;
+}
+
+.send-result-btn {
+  margin-top: 1em;
 }
 
 .question {

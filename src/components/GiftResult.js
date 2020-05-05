@@ -16,6 +16,8 @@ const CAMPUSES = [
 export default function ({ topGifts, resetForm, language }) {
   const [email, setEmail] = useState('')
   const [campus, setCampus] = useState('Stockholm City')
+  const [firstname, setFirstname] = useState('')
+  const [lastname, setLastname] = useState('')
   const [emailSent, setEmailSent] = useState(false)
   const [shareWithCampusPastor, setShareWithCampusPastor] = useState(false)
 
@@ -30,7 +32,9 @@ export default function ({ topGifts, resetForm, language }) {
           email,
           campus,
           shareWithCampusPastor,
-          language
+          language,
+          firstname,
+          lastname
         })
       
       setEmailSent(true)
@@ -42,8 +46,8 @@ export default function ({ topGifts, resetForm, language }) {
   if (emailSent) {
     return (
       <div>
-        <h1>Thank you for taking the test!</h1>
-        <button type="button" onClick={resetForm}>Click here to start over</button>
+        <h1>{translations.thank_you_for_taking_the_test[language]}</h1>
+        <button className="btn" type="button" onClick={resetForm}>{translations.start_over[language]}</button>
       </div>
     )
   }
@@ -59,7 +63,19 @@ export default function ({ topGifts, resetForm, language }) {
       <form onSubmit={sendResult} className="email-result">
         <h3>{translations.send_your_results_to_yourself[language]}</h3>
         <div className="form-group">
-          <Dropdown options={CAMPUSES} onSelect={setCampus} placeholderText={translations.select_your_campus[language]} />
+          <Dropdown options={[...CAMPUSES, translations.another_church[language]]} onSelect={setCampus} placeholderText={translations.select_your_campus[language]} />
+        </div>
+        <div className="form-group">
+          <input
+            type="text"
+            value={firstname}
+            onChange={e => setFirstname(e.target.value)}
+            placeholder={translations.firstname[language]} required />
+          <input
+            type="text"
+            value={lastname}
+            onChange={e => setLastname(e.target.value)}
+            placeholder={translations.lastname[language]} required />
         </div>
         <div className="form-group">
           <input
@@ -69,15 +85,15 @@ export default function ({ topGifts, resetForm, language }) {
             placeholder={translations.email[language]} required />
         </div>
         <div className="form-group">
-          <label htmlFor="shareWithPastor">{translations.share_your_results_with_your_campus_pastor[language]}</label>
           <input
             id="shareWithPastor"
             type="checkbox"
             checked={shareWithCampusPastor}
             onChange={e => setShareWithCampusPastor(e.target.checked)}
             placeholder={translations.email[language]} />
+          <label htmlFor="shareWithPastor" className="campus-pastor">{translations.share_your_results_with_your_campus_pastor[language]}</label>
         </div>
-        <button className="btn" type="submit">{translations.send[language]}</button>
+        <button className="btn send-result-btn" type="submit">{translations.send[language]}</button>
       </form>
     </div>
   )
